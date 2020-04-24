@@ -1,4 +1,3 @@
-/**/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -65,13 +64,13 @@ struct Node* subPoly(struct Node* poly1, struct Node* poly2) {
 void print_list(struct Node* head) {
 	struct Node* p;
 	if (head == NULL) return;
-	p = head->link; // Áö¼ö°¡ -1ÀÎ Ç×À» ÇÇÇÔ
+	p = head->link; // ì§€ìˆ˜ê°€ -1ì¸ í•­ì„ í”¼í•¨
 	printf(" %d^%d ", p->coef, p->expon);
 	p = p->link;
 	do {
 		printf("+ %d^%d ", p->coef, p->expon);
 		p = p->link;
-	} while (p != head); // p°¡ Çì´õ³ëµå¸¦ °¡¸®Å°¸é Á¾·á
+	} while (p != head); // pê°€ í—¤ë”ë…¸ë“œë¥¼ ê°€ë¦¬í‚¤ë©´ ì¢…ë£Œ
 	printf("\n\n");
 }
 
@@ -90,7 +89,7 @@ int main() {
 	insert_last(poly1, 1, 0);
 
 
-	printf("´ÙÇ×½Ä1 ÀÔ·Â : ");
+	printf("ë‹¤í•­ì‹1 ì…ë ¥ : ");
 	print_list(poly1);
 
 	insert_last(poly2, 3, 11);
@@ -99,11 +98,11 @@ int main() {
 	insert_last(poly2, -2, 5);
 	insert_last(poly2, -2, 1);
 
-	printf("´ÙÇ×½Ä2 ÀÔ·Â : ");
+	printf("ë‹¤í•­ì‹2 ì…ë ¥ : ");
 	print_list(poly2);
 
 	subpoly = subPoly(poly1, poly2);
-	printf("Â÷ = ");
+	printf("ì°¨ = ");
 	print_list(subpoly);
 
 	return 0;
